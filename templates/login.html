@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        *{
+            margin: 0;
+            overflow: hidden;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container_login{
+            background-color: lightgray;
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        button{
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .erro{
+            text-align: center;
+            margin-top: 10px;
+            color: red;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" class="container_login", method="post">
+        <h1>Login</h1>
+        <p>Usuário</p>
+        <input type="text" id="usuario" name="usuario">
+        <p>Senha</p>
+        <input type="password" id="senha" name="senha">
+        <button type="submit">ENTRAR</button>
+        <p class="erro">{{erro}}</p>
+    </form>
+</body>
+</html>
