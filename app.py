@@ -26,6 +26,6 @@ def login_post():
 
 @app.route("/comentarios")
 def comentarios():
-    return("comentarios.html")
+    return rt("comentarios.html")
 
 app.run(host="0.0.0.0", port=5050, debug=True)
