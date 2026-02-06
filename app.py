@@ -1,4 +1,4 @@
-from flask import Flask as F, render_template as rt, request as rq, redirect as red
+from flask import Flask as F, render_template as rt, request as rq, redirect as red, session as ss
 
 app = F(__name__)
 app.secret_key = "acai"
@@ -22,13 +22,18 @@ def login_post():
     usuario = rq.form.get("usuario")
     senha = rq.form.get("senha")
     if usuario == "Fernanda" and senha == "123":
+        ss["usuario"] = "" \
+        ""
         return rt("comentarios.html")
     else:
         return rt("login.html", erro = "Acesso Negado!")
 
 @app.route("/comentarios")
 def comentarios():
-    return rt("comentarios.html", lc = lc)
+    if "usuario" in ss:
+        return rt("comentarios.html", lc = lc)
+    else:
+        return red("/login")
 
 @app.route("/add_comentarios", methods=["POST"])
 def add_comentario():
