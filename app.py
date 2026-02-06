@@ -22,8 +22,7 @@ def login_post():
     usuario = rq.form.get("usuario")
     senha = rq.form.get("senha")
     if usuario == "Fernanda" and senha == "123":
-        ss["usuario"] = "" \
-        ""
+        ss["usuario"] = "Fernanda"
         return rt("comentarios.html")
     else:
         return rt("login.html", erro = "Acesso Negado!")
